@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    
+    border-radius: 10px;
+    background-color: 00004d;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(6, 141, 129, 0.247); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 141, 129, 0.247); 
+  }
+  i{
+    cursor:pointer;
+  }
+  i:hover{
+    color: white;
+  }
+  /* Loader animation */
+
+  .S{
+    animation: s 1s infinite ease-in-out;
+  }
+  @keyframes s{
+    0%{
+      opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+      opacity: 0.5;
+    }
+  }
+  .V{
+    animation: v 1s infinite;
+  }
+  @keyframes v{
+    0%{
+      opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+      opacity: 0.5;
+    }
+  }
+  .A{
+    animation: a 1s infinite;
+  }
+  @keyframes a{
+    0%{
+      opacity: 0.5;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+input ,textarea{
+  height:50px;
+  width: 95%;
+  padding-left: 15px;
+  margin: 0 5px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: large;
+  box-sizing: border-box;
+  display: block;
+  color: #4dffb8;
+}
+input:focus{
+  border: 2px solid rgb(72, 72, 72);
+}
+label{
+  font-size: large;
+}
+.Image{
+  border-radius: 29% 33% 17% 20% / 35% 39% 17% 15%;
+}
+textarea{
+  resize:none;
+  height:120px;
+}
+
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  display: inline-grid;
+  width: 80px;
+  aspect-ratio: 1;
+}
+.loader:before,
+.loader:after {
+  content:"";
+  grid-area: 1/1;
+  border-radius: 50%;
+  animation: l3-0 2s alternate infinite ease-in-out;
+}
+.loader:before {
+  margin: 25%;
+  background: repeating-conic-gradient(#ff6666 0 60deg,#4dffb8 0 120deg);
+  translate: 0 50%;
+  rotate: -150deg;
+}
+.loader:after {
+  padding: 10%;
+  margin: -10%;
+  background: repeating-conic-gradient(#4dffb8 0 30deg,#ff6666 0 60deg);
+  mask:linear-gradient(#0000 50%,#000 0) content-box exclude,linear-gradient(#0000 50%,#000 0);
+  rotate: -75deg;
+  animation-name: l3-1;
+}
+@keyframes l3-0 {to{rotate: 150deg}}
+@keyframes l3-1 {to{rotate:  75deg}}
